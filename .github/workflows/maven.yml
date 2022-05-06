@@ -24,3 +24,15 @@ jobs:
     
     - name: Build with Maven
       run: mvn clean test 
+  Analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    steps:
+      
+    
+      - uses: actions/checkout@v2    
+      - name: analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar  -Dsonar.projectKey=Kalaiselvan92_wsstest-main -Dsonar.organization= kalaiselvan92
