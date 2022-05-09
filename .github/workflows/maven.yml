@@ -20,10 +20,8 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: |
-          pwd
-          ls -lrt
-          mvn test
+        run: mvn clean test -Dtest=com.wss.UnitTest
+          
         
       
 
