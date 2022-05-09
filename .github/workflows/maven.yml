@@ -20,11 +20,9 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: mvn clean test
+        run: |
+          pwd
+          ls -lrt
         
-      - name: Analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn clean -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.coverage.jacoco=target/jacoco-ut/jacoco.xml -Dsonar.analysis.mode=publish  -Dsonar.projectKey=Kalaiselvan92_wsstest-main -Dsonar.organization= kalaiselvan92
+      
 
