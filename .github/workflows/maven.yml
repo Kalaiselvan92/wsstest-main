@@ -20,9 +20,8 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: |
-          mvn clean test
-          - name: analyze
+        run: mvn clean test
+        
       - name: Analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
