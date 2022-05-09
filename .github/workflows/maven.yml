@@ -23,6 +23,7 @@ jobs:
         run: |
           pwd
           ls -lrt
+          mvn test
         
       
 
